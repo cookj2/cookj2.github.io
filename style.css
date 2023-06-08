@@ -88,13 +88,16 @@ h2, h3 {
             border-radius: 10px;
             margin-bottom: 10px;
             opacity: 0.5;
+            border: 4px rgb(255, 89, 89) ridge;
         }
 
         #portfolio li:hover {
             background: #eee;
+            
         }
 
         #portfolio a {
             text-decoration: none;
+             
             color: #090404;
         }
