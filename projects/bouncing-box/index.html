@@ -69,7 +69,7 @@
 
 			var points = 0;
 			var speed = 10
-
+			var positionX = 0
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -82,10 +82,10 @@
 				moveBoxTo(positionX);
 
 				if (positionX > boardWidth) {
-					speed = -speed;  
+					speed = -speed;
 				}
 				if (positionX < 0) {
-				speed = speed * -1;
+					speed = speed * -1;
 				}
 			};
 
