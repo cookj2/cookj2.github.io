@@ -58,11 +58,11 @@ dataShapes.push(shape);
 
  for(var i = 0; i < dataShapes.length; i++) {
 var currentShape = dataShapes[i]
- if (currentShape.color === red) {
+ if (currentShape.color === "red") {
   currentShape.goodBehavior = "bounce"
  }
 
- else if (currentShape.color === blue) {
+ else if (currentShape.color === "blue") {
   currentShape.goodBehavior = "blink"
  }
 
@@ -81,15 +81,21 @@ function handleStatic(data) {
 animationDetails.displayType = 1
 setBackgroundWithObject(data)
 }
-handleStatic();
 
 
 
   // TODO 4-a: add a function that handles the good display type
   
-
+  function handleGood (color, shape, repeat) {
+    setBackgroundWithSimple(color, shape, repeat)
+    animationDetails.displayType = 2
+  }
   // TODO 5-a: add a function that handles the bad display type
-  
+  function handleBad (data, repeat) {
+    repeat = repeat + 1;
+    setBackgroundWithMixed(data, repeat);
+    animationDetails.displayType = 3;
+  }
 
   /////////////////////////////////////////////////
   // BUTTON HANDLERS BELOW HERE (3-b, 4-b, 5-b) ///
@@ -102,12 +108,15 @@ handleStatic();
 
   function goodDisplay() {
     // TODO 4-b: call your handleGood function
-    
+    var currentShape = dataShapes[currentIndex]
+    handleGood(currentShape.color, currentShape.shape, currentShape.repeat)
   }
 
   function badDisplay() {
     // TODO 5-b: call your handleBad function
-    
+   var currentShape = dataShapes[currentIndex];
+   var repeat = currentShape.repeat
+   handleBad(currentShape, repeat);
   }
 
   /////////////////////////////////////////////////
