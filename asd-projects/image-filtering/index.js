@@ -19,6 +19,8 @@ function resetAndRender() {
 // this function applies the filters to the image and is where you should call
 // all of your apply functions
 function applyAndRender() {
+
+  console.log(applAndRender) 
   // Multiple TODOs: Call your apply function(s) here
 
   
@@ -32,6 +34,16 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
+
+function applyFilter () {
+for (var i = 0; i < image.length; i++) {
+  for (var r = 0; r < image[i].length ; r++) {
+var rgbString = image[i][r]
+  }
+}
+}
+
+var rpgNumbers
 
 
 // TODO 7: Create the applyFilterNoBackground function

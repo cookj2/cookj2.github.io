@@ -10,9 +10,20 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
-  
+  var KEY = {
+    ENTER: 13,
+    UP: 38,
+  DOWN: 40,
+  LEFT: 37,
+  RIGHT: 39
+  };
   // Game Item Objects
-
+  var walker = {
+    positionX: 0,
+    speedX: 0,
+    positionY: 0,
+    speedY: 0,
+  }
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -28,21 +39,68 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
-
+    repositiionGameItem()
+wallCollision()
+redrawGameItem()
   }
   
   /* 
   Called in response to events.
   */
   function handleKeyDown(event) {
-console.log(event.which)
+    if (event.which === KEY.ENTER) {
+console.log("enter pressed");
+}
+
+  if (event.which === KEY.LEFT) {
+console.log("left pressed");
+walker.speedX = -5;
+}
+
+else if (event.which === KEY.RIGHT) {
+  console.log("left pressed");
+  walker.speedX = 5;
+  }
+
+  else if (event.which === KEY.UP) {
+    console.log("up pressed");
+    walker.speedY = -5;
+    }
+
+    else if (event.which === KEY.DOWN) {
+      console.log("up pressed");
+      walker.speedY = 5;
+      }
+
+      function handleKeyUp(event) {
+        if (event.which === KEY.ENTER) {
+    console.log("enter pressed");
+    }
+
+    if (event.which === KEY.LEFT) {
+ { console.log("left pressed");
+  walker.speedX = 0;
+  }
+
+  if (event.which === KEY.RIGHT) {
+    { console.log("right pressed");
+     walker.speedX = 0;
+     }
+
+     if (event.which === KEY.UP) {
+      { console.log("up pressed");
+       walker.speedY = 0;
+       }
+
+       if (event.which === KEY.DOWN) {
+        { console.log("down pressed");
+         walker.speedY = 0;
+         }
+  
 
 }
-var KEY = {
-  ENTER: 13,
-  Up: 38
-};
+
+
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
