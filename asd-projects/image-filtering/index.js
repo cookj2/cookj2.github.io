@@ -20,10 +20,10 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
 
-  console.log(applAndRender) 
+  console.log(applyAndRender)
   // Multiple TODOs: Call your apply function(s) here
 
-  
+applyFilter()
 
   // do not change the below line of code
   render($("#display"), image);
@@ -35,15 +35,20 @@ function applyAndRender() {
 
 // TODO 1, 2 & 4: Create the applyFilter function here
 
-function applyFilter () {
-for (var i = 0; i < image.length; i++) {
-  for (var r = 0; r < image[i].length ; r++) {
-var rgbString = image[i][r]
+function applyFilter(filterFunction) {
+  for (var i = 0; i < image.length; i++) {
+    var row = image[i]
+    for (var r = 0; r < row.length; r++) {
+      var rgbString = image[i][r]
+      var rgbNumbers = rgbStringToArray(rgbString)
+      filterFunction(rgbNumbers)
+      image[i][r] = rgbArrayToString(rgbNumbers)
+    }
   }
-}
+
 }
 
-var rpgNumbers
+
 
 
 // TODO 7: Create the applyFilterNoBackground function
@@ -53,7 +58,9 @@ var rpgNumbers
 
 
 // TODO 3: Create reddify function
-
+function reddify(array){
+  
+}
 
 // TODO 6: Create more filter functions
 
